@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>WebGL</title>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+  integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+  crossorigin="anonymous"
+  defer >
+</script>
+</head>
+
+<body>
+  <canvas id="glcanvas" width="1000" height="480"></canvas>
+  <button onclick="Iambutton()">我是按鈕</button>
+  <button onclick="LL()">正中心為軸，逆時針公轉</button>
+</body>
+<script src="webgl.js"></script>
+<script>
+  function Iambutton() {
+    if( t1[1] === t2[1] ) { t1[1] = -t1[1]; }
+    isopenr = 1;
+    t1[1] = -t1[1];
+    t2[1] = -t2[1];
+    ofs1 = [-1.5, 0.0, -6.0];
+    ofs2 = [1.5, 0.0, -6.0];
+  }
+
+  function LL(){
+  isopenr = 0;
+  if(t1[1] !== t2[1]) { t1[1] = -t1[1]; }
+  }
+</script>
+</html>
